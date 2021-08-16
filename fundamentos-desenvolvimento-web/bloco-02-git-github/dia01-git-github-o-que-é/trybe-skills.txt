@@ -3,5 +3,10 @@ O que eu vou aprender na Trybe:
 - Unix
 - Bash
 - Git
+-Javascript
+-DOM
+-Forms
+-Flexbox
 - HTML
 - CSS
+
