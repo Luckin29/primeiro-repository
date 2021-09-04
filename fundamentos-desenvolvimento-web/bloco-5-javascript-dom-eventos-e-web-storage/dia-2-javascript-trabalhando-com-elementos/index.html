@@ -57,16 +57,56 @@
   </head>
   <body>
     <script>
-      function criaElemento(texto) {
+      function criah1(texto) {
         const recupera = document.getElementsByTagName('body')[0]
-        let divNova = document.createElement('h1')
-        divNova.innerText = texto;
-        recupera.appendChild(divNova)
+        let novah1 = document.createElement('h1')
+        novah1.innerText = texto;
+        recupera.appendChild(novah1)
         console.log(recupera)
       }
-      criaElemento('Exercício 5.2 - JavaScript DOM ');
+      criah1('Exercício 5.2 - JavaScript DOM ');
 
+      function criaMain() {
+        const recupera = document.getElementsByTagName('body')[0]
+        let mainNova = document.createElement('main')
+        mainNova.className = 'main-content'
+        recupera.appendChild(mainNova)
+        console.log(recupera)
+      }
+      criaMain()
+
+      function addSection(nomeClasse) {
+        const recupera = document.getElementsByClassName('main-content')[0]
+        let sectionNova = document.createElement('section')
+        sectionNova.className = nomeClasse
+        recupera.appendChild(sectionNova)
+        console.log(recupera)
+      }
+      addSection('center-content')
+      addSection('left-content')
+      addSection('right-content')
+
+      function addParagraph() {
+        const recupera = document.getElementsByClassName('center-content')[0]
+        let paragrafoNovo = document.createElement('p')
+        paragrafoNovo.innerText = 'Algum texto criado para bla bla bla bla bla'
+        recupera.appendChild(paragrafoNovo)
+        console.log(recupera)
+      }
+      addParagraph()
+
+      function addImage(){
+        const recupera = document.getElementsByClassName('left-content')[0]
+        let novaImagem = document.createElement('img')
+        recupera.appendChild(novaImagem)
+        novaImagem.src='https://picsum.photos/200'
+        novaImagem.className = 'small-image'
+        console.log(recupera)
+      }
+      addImage()
+      
 
     </script>
+    
   </body>
 </html>
