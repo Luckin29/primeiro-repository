@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 40%;
+        display: inline-block;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 40%;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function criah1(texto) {
+        const recupera = document.getElementsByTagName('body')[0]
+        let novah1 = document.createElement('h1')
+        novah1.innerText = texto;
+        recupera.appendChild(novah1)
+        console.log(recupera)
+      }
+      criah1('Exercício 5.2 - JavaScript DOM ');
+
+      function criaMain() {
+        const recupera = document.getElementsByTagName('body')[0]
+        let mainNova = document.createElement('main')
+        mainNova.className = 'main-content'
+        recupera.appendChild(mainNova)
+        console.log(recupera)
+      }
+      criaMain()
+
+      function addSection(nomeClasse) {
+        const recupera = document.getElementsByClassName('main-content')[0]
+        let sectionNova = document.createElement('section')
+        sectionNova.className = nomeClasse
+        recupera.appendChild(sectionNova)
+        console.log(recupera)
+      }
+      addSection('center-content')
+      addSection('left-content')
+      addSection('right-content')
+
+      function addParagraph() {
+        const recupera = document.getElementsByClassName('center-content')[0]
+        let paragrafoNovo = document.createElement('p')
+        paragrafoNovo.innerText = 'Algum texto criado para bla bla bla bla bla'
+        recupera.appendChild(paragrafoNovo)
+        console.log(recupera)
+      }
+      addParagraph()
+
+      function addImage(){
+        const recupera = document.getElementsByClassName('left-content')[0]
+        let novaImagem = document.createElement('img')
+        recupera.appendChild(novaImagem)
+        novaImagem.src='https://picsum.photos/200'
+        novaImagem.className = 'small-image'
+        console.log(recupera)
+      }
+      addImage()
+      
+      function addList() {
+        contagem = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+        const recupera = document.getElementsByClassName('right-content')[0]
+        let lista = document.createElement('ul')
+        recupera.appendChild(lista)
+        for(let i=0; i < (contagem.length); i += 1 ) {
+          let elemento = document.createElement('li')
+          lista.appendChild(elemento)
+          elemento.innerText=contagem[i]
+        }
+        console.log(recupera)
+      }
+      addList();
+
+      function criah3(texto) {
+        const recupera = document.getElementsByClassName('main-content')[0]
+        let novah3 = document.createElement('h3')
+        novah3.innerText = texto;
+        recupera.appendChild(novah3)
+        console.log(recupera)
+      }
+      criah3('testandooo');
+      criah3('testandooo');
+      criah3('testandooo');
+
+    </script>
+    
+  </body>
+</html>
